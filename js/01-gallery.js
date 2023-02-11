@@ -3,6 +3,7 @@ import { galleryItems } from './gallery-items.js';
 const galleryItemMarkup = createGallery(galleryItems);
 
 const galleryContainer = document.querySelector('.gallery');
+
 function createGallery(items) {
     return items.map(item => `<div class="gallery__item">
   <a class="gallery__link" href="${item.original}" onclick="return false;" rel="noreferrer noopener">
