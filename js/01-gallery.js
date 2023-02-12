@@ -18,14 +18,16 @@ function createGallery(items) {
 }
 galleryContainer.innerHTML = galleryItemMarkup;
 
-galleryContainer.addEventListener('click', onParentClick)
+galleryContainer.addEventListener('click', onParentClick);
 
 function onParentClick(evt) {
-    
+  evt.preventDefault();
+  
+  if (evt.target.nodeName !== "IMG") {
+    return;
+  }
     const instance = basicLightbox.create(`
-<div class="modal">
         <img src= "${evt.target.dataset.source}">
-    </div>
 `)
 
 instance.show()
